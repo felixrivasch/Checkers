@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Checkers game - Felix Rivas</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/damasFelixRivas.js"></script>
+</head>
+<body>
+	<h4 id="title-game">Checkers makes by Felix Riv@s</h4>
+	<div id="datos-player-1">
+		<span>Player Red</span>
+		<label># de fichas</label>
+		<h2 id="num-pieces-1">12</h2>
+	</div>
+	<div id="datos-player-2">
+		<span>Player Blue</span>
+		<label># de fichas</label>
+		<h2 id="num-pieces-2">12</h2>
+	</div>
+	
+	<div id="menu">
+		<h3>Reglas</h3>
+		<div name="rules">
+			1. Cada jugador posee 12 fichas. <br>
+			2. Todas las fichas se mueven en forma diagonal una sola posicion, siempre que la posición destino este ocupada(Las casillas negras no son aceptadas).<br>
+			3. Las fichas rojas solamente se mueven hacia abajo.<br>
+			4. Las fichas azules solamente se mueven hacia arriba.<br>
+			5. Se puede comer fichas del jugador oponente.<br>
+			6. Si una ficha del llega al extremo opuesto, esta se hace dama, y puede desplazarse una posición diagonalmente en cualquier dirección.<br>
+			7. El juego termina cuando uno de los jugadores se quedas sin fichas.<br>
+		</div>
+		<h3>Ganador</h3>
+		<div name="winner">
+			Gana el juego el jugador que deje a su oponente sin fichas.
+		</div>
+		<h3>Reiniciar juego</h3>
+		<div name="reset-game">
+			<button id="btn-reset">Reiniciar</button>
+		</div>
+	</div>
+
+	<div id="chess-board">
+		<div id="row-1" class="row">
+			<div id="box-row-1-col-1" class="box dark-box"></div>
+			<div id="box-row-1-col-2" class="box clear-box">
+				<div id="piece1-row-1-col-2" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-1-col-3" class="box dark-box"></div>
+			<div id="box-row-1-col-4" class="box clear-box">
+				<div id="piece1-row-1-col-4" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-1-col-5" class="box dark-box"></div>
+			<div id="box-row-1-col-6" class="box clear-box">
+				<div id="piece1-row-1-col-6" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-1-col-7" class="box dark-box"></div>
+			<div id="box-row-1-col-8" class="box clear-box">
+				<div id="piece1-row-1-col-8" class="piece-start piece1"></div>
+			</div>
+		</div>
+		<div id="row-2" class="row">
+			<div id="box-row-2-col-1" class="box clear-box">
+				<div id="piece1-row-2-col-1" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-2-col-2" class="box dark-box"></div>
+			<div id="box-row-2-col-3" class="box clear-box">
+				<div id="piece1-row-2-col-3" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-2-col-4" class="box dark-box"></div>
+			<div id="box-row-2-col-5" class="box clear-box">
+				<div id="piece1-row-2-col-5" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-2-col-6" class="box dark-box"></div>
+			<div id="box-row-2-col-7" class="box clear-box">
+				<div id="piece1-row-2-col-7" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-2-col-8" class="box dark-box"></div>
+		</div>
+		<div id="row-3" class="row">
+			<div id="box-row-3-col-1" class="box dark-box"></div>
+			<div id="box-row-3-col-2" class="box clear-box">
+				<div id="piece1-row-2-col-2" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-3-col-3" class="box dark-box"></div>
+			<div id="box-row-3-col-4" class="box clear-box">
+				<div id="piece1-row-3-col-4" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-3-col-5" class="box dark-box"></div>
+			<div id="box-row-3-col-6" class="box clear-box">
+				<div id="piece1-row-3-col-6" class="piece-start piece1"></div>
+			</div>
+			<div id="box-row-3-col-7" class="box dark-box"></div>
+			<div id="box-row-3-col-8" class="box clear-box">
+				<div id="piece1-row-3-col-8" class="piece-start piece1"></div>
+			</div>
+		</div>
+		<div id="row-4" class="row">
+			<div id="box-row-4-col-1" class="box clear-box"></div>
+			<div id="box-row-4-col-2" class="box dark-box"></div>
+			<div id="box-row-4-col-3" class="box clear-box"></div>
+			<div id="box-row-4-col-4" class="box dark-box"></div>
+			<div id="box-row-4-col-5" class="box clear-box"></div>
+			<div id="box-row-4-col-6" class="box dark-box"></div>
+			<div id="box-row-4-col-7" class="box clear-box"></div>
+			<div id="box-row-4-col-8" class="box dark-box"></div>
+		</div>
+		<div id="row-5" class="row">
+			<div id="box-row-5-col-1" class="box dark-box"></div>
+			<div id="box-row-5-col-2" class="box clear-box"></div>
+			<div id="box-row-5-col-3" class="box dark-box"></div>
+			<div id="box-row-5-col-4" class="box clear-box"></div>
+			<div id="box-row-5-col-5" class="box dark-box"></div>
+			<div id="box-row-5-col-6" class="box clear-box"></div>
+			<div id="box-row-5-col-7" class="box dark-box"></div>
+			<div id="box-row-5-col-8" class="box clear-box"></div>
+		</div>
+		<div id="row-6" class="row">
+			<div id="box-row-6-col-1" class="box clear-box"></div>
+			<div id="box-row-6-col-2" class="box dark-box"></div>
+			<div id="box-row-6-col-3" class="box clear-box"></div>
+			<div id="box-row-6-col-4" class="box dark-box"></div>
+			<div id="box-row-6-col-5" class="box clear-box"></div>
+			<div id="box-row-6-col-6" class="box dark-box"></div>
+			<div id="box-row-6-col-7" class="box clear-box"></div>
+			<div id="box-row-6-col-8" class="box dark-box"></div>
+		</div>
+		<div id="row-7" class="row">
+			<div id="box-row-7-col-1" class="box dark-box"></div>
+			<div id="box-row-7-col-2" class="box clear-box">
+				<div id="piece2-row-7-col-2" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-7-col-3" class="box dark-box"></div>
+			<div id="box-row-7-col-4" class="box clear-box">
+				<div id="piece2-row-7-col-4" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-7-col-5" class="box dark-box"></div>
+			<div id="box-row-7-col-6" class="box clear-box">
+				<div id="piece2-row-7-col-6" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-7-col-7" class="box dark-box"></div>
+			<div id="box-row-7-col-8" class="box clear-box">
+				<div id="piece2-row-7-col-8" class="piece-start piece2"></div>
+			</div>
+		</div>
+		<div id="row-8" class="row">
+			<div id="box-row-8-col-1" class="box clear-box">
+				<div id="piece2-row-8-col-1" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-8-col-2" class="box dark-box"></div>
+			<div id="box-row-8-col-3" class="box clear-box">
+				<div id="piece2-row-8-col-3" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-8-col-4" class="box dark-box"></div>
+			<div id="box-row-8-col-5" class="box clear-box">
+				<div id="piece2-row-8-col-5" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-8-col-6" class="box dark-box"></div>
+			<div id="box-row-8-col-7" class="box clear-box">
+				<div id="piece2-row-8-col-7" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-2-col-8" class="box dark-box"></div>
+		</div>
+		<div id="row-9" class="row">
+			<div id="box-row-9-col-1" class="box dark-box"></div>
+			<div id="box-row-9-col-2" class="box clear-box">
+				<div id="piece2-row-9-col-2" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-9-col-3" class="box dark-box"></div>
+			<div id="box-row-9-col-4" class="box clear-box">
+				<div id="piece2-row-9-col-4" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-9-col-5" class="box dark-box"></div>
+			<div id="box-row-9-col-6" class="box clear-box">
+				<div id="piece2-row-9-col-6" class="piece-start piece2"></div>
+			</div>
+			<div id="box-row-9-col-7" class="box dark-box"></div>
+			<div id="box-row-9-col-8" class="box clear-box">
+				<div id="piece2-row-9-col-8" class="piece-start piece2"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="foot-page">
+		Felix Rivas Chamorro - Todos los derechos reservados @ Copyright 2017 - Lima - Perú.
+	</div>
+</body>
+</html>

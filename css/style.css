@@ -1,0 +1,149 @@
+#menu{
+	position: absolute;
+	top: 8%;
+	width: 343px;
+}
+div [name=rules],[name=winner],[name=reset-game]{
+	background: #CEF6EC;
+}
+
+#datos-player-1, #datos-player-2{
+	position: absolute;
+	left: 72%;
+	width: 100px;
+	height: 240px;
+	border-radius: 5px;
+	box-shadow: 3px 4px 16px 0px rgba(0,0,0,.4);
+	background: url(images/madera-natural.jpg);
+	text-align: center;
+	font-weight: bold;
+}
+#datos-player-1{
+	top: 8%;
+	color: #B40404;
+}
+#datos-player-2{
+	top: 56%;
+	color: #0F1583;
+}
+#chess-board{
+	position: absolute;
+	left: 31%;
+	top: 8%;
+	border-radius: 4px;
+	background: url(images/madera-natural.jpg);
+	box-shadow: 3px 4px 16px 0px rgba(0,0,0,.6);
+	width: 480px;
+	height: 540px;
+}
+#box-row-1-col-1{
+	border-top-left-radius: 4px;
+}
+#box-row-9-col-1{
+	border-bottom-left-radius: 4px;
+}
+.row{
+	width: 480px;
+	height: 60px;
+
+}
+.box{
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+.clear-box{
+	background: transparent;
+}
+.dark-box{
+	background: rgba(0,0,0,.7);
+}
+.piece-start{
+	position: absolute;
+	margin-left: 12px;
+	margin-top: 12px;
+
+	width: 35px;
+	height: 35px;
+	border-radius: 25px;
+
+	box-shadow: 3px 4px 16px 0px rgba(0,0,0,0.75);
+}
+.piece{
+	position: absolute;
+
+	width: 35px;
+	height: 35px;
+	border-radius: 25px;
+
+	-webkit-box-shadow: 3px 4px 16px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 4px 16px 0px rgba(0,0,0,0.75);
+	box-shadow: 3px 4px 16px 0px rgba(0,0,0,0.75);
+}
+.piece-temporal{
+	box-shadow: 3px 4px 16px 0px rgba(255,255,255,0);
+}
+.light-dama{
+	box-shadow: 3px 4px 16px 0px rgba(255,255,255,.8);
+}
+.piece1{
+	background: #B40404;
+}
+.piece2{
+	background: #0080FF;
+	/* #2E9AFE*/
+}
+
+.queen{
+	font-size: 25px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.queen1{
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+}
+.queen2{
+	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+}
+#title-game{
+	position: absolute;
+	top: 2%;
+	left: 37.5%;
+	color: #34495e;
+	margin: 0px;
+	padding: 2px 50px 2px 50px;
+	border-radius: 5px;
+	box-shadow: 3px 4px 16px 0px rgba(0,0,0,0.75);
+}
+span{
+	position: absolute;
+	top: 15%;
+	left: 0%;
+	width: 100%
+}
+label,h2{
+	position: absolute;
+	top: 35%;
+	left: 0%;
+	width: 100%;
+	color: black;
+	font-size: 16px;
+	text-align: center;
+}
+#num-pieces-1, #num-pieces-2{
+	top: 45%;
+	width: 100%;
+	font-size: 32px;
+}
+#num-pieces-1{
+	color: #B40404;
+}
+#num-pieces-2{
+	color: #0F1583;
+}
+#foot-page{
+	position: absolute;
+	top: 96.5%;
+	font-size: 12px;
+	color: #34495e;
+}
